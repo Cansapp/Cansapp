@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4A2E6C3F20E7FFB0001F404B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E6C3E20E7FFB0001F404B /* AppDelegate.swift */; };
 		4A2E6C4120E7FFB0001F404B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E6C4020E7FFB0001F404B /* ViewController.swift */; };
-		4A2E6C4420E7FFB1001F404B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E6C4220E7FFB1001F404B /* Main.storyboard */; };
 		4A2E6C4620E7FFB2001F404B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E6C4520E7FFB2001F404B /* Assets.xcassets */; };
 		4A2E6C4920E7FFB2001F404B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E6C4720E7FFB2001F404B /* LaunchScreen.storyboard */; };
 		4A2E6C5420E7FFB2001F404B /* CansappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E6C5320E7FFB2001F404B /* CansappTests.swift */; };
@@ -37,7 +36,6 @@
 		4A2E6C3B20E7FFB0001F404B /* Cansapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cansapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2E6C3E20E7FFB0001F404B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A2E6C4020E7FFB0001F404B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4A2E6C4320E7FFB1001F404B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A2E6C4520E7FFB2001F404B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A2E6C4820E7FFB2001F404B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A2E6C4A20E7FFB2001F404B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,9 +95,8 @@
 		4A2E6C3D20E7FFB0001F404B /* Cansapp */ = {
 			isa = PBXGroup;
 			children = (
+				4FE8BC1320EF0215009BA2BB /* Controllers */,
 				4A2E6C3E20E7FFB0001F404B /* AppDelegate.swift */,
-				4A2E6C4020E7FFB0001F404B /* ViewController.swift */,
-				4A2E6C4220E7FFB1001F404B /* Main.storyboard */,
 				4A2E6C4520E7FFB2001F404B /* Assets.xcassets */,
 				4A2E6C4720E7FFB2001F404B /* LaunchScreen.storyboard */,
 				4A2E6C4A20E7FFB2001F404B /* Info.plist */,
@@ -123,6 +120,14 @@
 				4A2E6C6020E7FFB2001F404B /* Info.plist */,
 			);
 			path = CansappUITests;
+			sourceTree = "<group>";
+		};
+		4FE8BC1320EF0215009BA2BB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A2E6C4020E7FFB0001F404B /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +236,6 @@
 			files = (
 				4A2E6C4920E7FFB2001F404B /* LaunchScreen.storyboard in Resources */,
 				4A2E6C4620E7FFB2001F404B /* Assets.xcassets in Resources */,
-				4A2E6C4420E7FFB1001F404B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +297,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4A2E6C4220E7FFB1001F404B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4A2E6C4320E7FFB1001F404B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4A2E6C4720E7FFB2001F404B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -432,6 +428,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Cansapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,6 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Cansapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,6 +465,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CansappTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +486,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CansappTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -506,6 +506,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CansappUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,6 +526,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CansappUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
