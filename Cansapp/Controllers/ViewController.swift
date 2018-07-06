@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         button.setTitle("Satelites", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitleColor(.black, for: .normal)
-        //button.addTarget(self, action: #selector(handleNextSat), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleNextSat), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isEnabled = true
         return button
@@ -82,8 +82,13 @@ class ViewController: UIViewController {
     }
     
     @objc func handleNextProy(){
-        let second = MissionViewController()
-        self.navigationController?.pushViewController(second, animated: true)
+        let mision = MissionViewController()
+        self.navigationController?.pushViewController(mision, animated: true)
+    }
+    
+    @objc func handleNextSat(){
+        let sat = SatViewController()
+        self.navigationController?.pushViewController(sat, animated: true)
     }
 
 }
