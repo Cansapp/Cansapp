@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         button.setTitle("Mision", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitleColor(.black, for: .normal)
-        //button.addTarget(self, action: #selector(handleNextProy), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleNextProy), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isEnabled = true
         return button
@@ -79,14 +79,12 @@ class ViewController: UIViewController {
         
         //Boton de arriba
         NSLayoutConstraint.activate([satButton.bottomAnchor.constraint(equalTo: proyButton.topAnchor, constant: -20), satButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 90), satButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -90), satButton.heightAnchor.constraint(equalToConstant: 45)])
-        
     }
     
-    
-    
-    
-    
-    
-    
+    @objc func handleNextProy(){
+        let second = MissionViewController()
+        self.navigationController?.pushViewController(second, animated: true)
+    }
+
 }
 

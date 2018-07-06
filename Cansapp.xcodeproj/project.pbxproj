@@ -13,6 +13,7 @@
 		4A2E6C4920E7FFB2001F404B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E6C4720E7FFB2001F404B /* LaunchScreen.storyboard */; };
 		4A2E6C5420E7FFB2001F404B /* CansappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E6C5320E7FFB2001F404B /* CansappTests.swift */; };
 		4A2E6C5F20E7FFB2001F404B /* CansappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E6C5E20E7FFB2001F404B /* CansappUITests.swift */; };
+		4FE8BC1520EF134E009BA2BB /* MissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8BC1420EF134E009BA2BB /* MissionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		4A2E6C5A20E7FFB2001F404B /* CansappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CansappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2E6C5E20E7FFB2001F404B /* CansappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CansappUITests.swift; sourceTree = "<group>"; };
 		4A2E6C6020E7FFB2001F404B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FE8BC1420EF134E009BA2BB /* MissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				4A2E6C4020E7FFB0001F404B /* ViewController.swift */,
+				4FE8BC1420EF134E009BA2BB /* MissionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FE8BC1520EF134E009BA2BB /* MissionViewController.swift in Sources */,
 				4A2E6C4120E7FFB0001F404B /* ViewController.swift in Sources */,
 				4A2E6C3F20E7FFB0001F404B /* AppDelegate.swift in Sources */,
 			);
