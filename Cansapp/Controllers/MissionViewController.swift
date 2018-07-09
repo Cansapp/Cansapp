@@ -9,12 +9,15 @@
 import UIKit
 
 class MissionViewController: UITableViewController {
+    
+    var names:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(botoncito))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(botoncito))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        setupView()
     }
 
 
@@ -24,12 +27,16 @@ class MissionViewController: UITableViewController {
         
     }
     
-    @objc func botoncito(){
+    @objc func botoncito() {
         
         let alert = UIAlertController(title: "Great Title", message: "Please input something", preferredStyle: UIAlertControllerStyle.alert)
         
         let action = UIAlertAction(title: "Name Input", style: .default) { (alertAction) in
             let textField = alert.textFields![0] as UITextField
+            textField.tintColor = UIColor.black
+            self.names.append(textField.text!)
+            print(self.names)
+            
         }
         
         alert.addTextField { (textField) in
@@ -38,8 +45,10 @@ class MissionViewController: UITableViewController {
         
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
-
+        
         
     }
+    
+
     
 }
