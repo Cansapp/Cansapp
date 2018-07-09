@@ -11,15 +11,32 @@ import UIKit
 class MissionViewController: UITableViewController {
     
     var names:[String] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(botoncito))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         setupView()
     }
-
+    
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return names.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        // Configure the cell...
+        cell.textLabel?.text = names[indexPath.row]
+        return cell
+    }
 
     func setupView(){
         view.backgroundColor = UIColor.white
@@ -36,7 +53,7 @@ class MissionViewController: UITableViewController {
             textField.tintColor = UIColor.black
             self.names.append(textField.text!)
             print(self.names)
-            
+            self.tableView.reloadData()
         }
         
         alert.addTextField { (textField) in
@@ -45,6 +62,7 @@ class MissionViewController: UITableViewController {
         
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
+        
         
         
     }
