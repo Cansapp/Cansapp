@@ -14,11 +14,10 @@ class MissionViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(botoncito))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(misionAlert))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         setupView()
     }
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -32,41 +31,73 @@ class MissionViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        
+        //Para colorear celdas despues
+//        if indexPath.row % 2 == 0{
+//            cell.backgroundColor = UIColor.lightGray
+//        }else{
+//            cell.backgroundColor = UIColor.darkGray
+//            cell.textLabel?.textColor = UIColor.white
+//        }
         // Configure the cell...
         cell.textLabel?.text = names[indexPath.row]
         return cell
     }
+    
+    //______________________________________________________________
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        /* UIContextualAction nos permite hacer los swift a la derecha/izquierda, personalidados.*/
+        
+        /* Style se va ver rojo y la etiqueta es bórrame.*/
+        let deleteAction = UIContextualAction(style: .destructive, title: "Bórrame") { (action, sourceView, completionHandler) in
+            /*Se borra del modelo y del tableVIew*/
+            self.names.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            completionHandler(true)
+        }
+        
+        deleteAction.backgroundColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1.0)
+        deleteAction.image = UIImage(named: "trash")
+        
+        /*Para habilitar los servicios que quieres incluir */
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        print(names)
+        
+        return swipeConfiguration
+    }
+    //--------------------------------------------------------------
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        perform(#selector(handleNextProy))
+    }
+    
+    //--------------------------------------------------------------
 
     func setupView(){
         view.backgroundColor = UIColor.white
         navigationItem.title = "Mision"
-        
     }
     
-    @objc func botoncito() {
-        
+    @objc func misionAlert() {
         let alert = UIAlertController(title: "Great Title", message: "Please input something", preferredStyle: UIAlertControllerStyle.alert)
         
         let action = UIAlertAction(title: "Name Input", style: .default) { (alertAction) in
             let textField = alert.textFields![0] as UITextField
             textField.tintColor = UIColor.black
             self.names.append(textField.text!)
-            print(self.names)
             self.tableView.reloadData()
         }
-        
         alert.addTextField { (textField) in
             textField.placeholder = "Enter your name"
         }
-        
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
-        
-        
-        
     }
     
-
+    @objc func handleNextProy(){
+        let first = ProjViewController()
+        self.navigationController?.pushViewController(first, animated: true)
+    }
     
 }
