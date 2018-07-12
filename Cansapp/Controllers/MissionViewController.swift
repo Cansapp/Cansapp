@@ -12,6 +12,14 @@ class MissionViewController: UITableViewController {
     
     var names:[String] = []
     
+    //Imagen Satelite
+    let satImage: UIImageView = {
+        let imagen = UIImageView(image: #imageLiteral(resourceName: "satIcon"))
+        imagen.translatesAutoresizingMaskIntoConstraints = false
+        imagen.contentMode = .scaleAspectFit
+        return imagen
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(misionAlert))
@@ -44,6 +52,8 @@ class MissionViewController: UITableViewController {
     }
     
     //______________________________________________________________
+    //Remove by trinling swipe
+    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         /* UIContextualAction nos permite hacer los swift a la derecha/izquierda, personalidados.*/
@@ -67,6 +77,7 @@ class MissionViewController: UITableViewController {
         return swipeConfiguration
     }
     //--------------------------------------------------------------
+    //Segue to project view
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         perform(#selector(handleNextProy))
