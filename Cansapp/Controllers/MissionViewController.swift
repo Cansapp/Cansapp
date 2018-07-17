@@ -10,7 +10,7 @@ import UIKit
 
 class MissionViewController: UITableViewController {
     
-    var names:[String] = []
+    public var names:[String] = ["Perro", "Gato"]
     
     //Imagen Satelite
     let satImage: UIImageView = {
@@ -24,6 +24,7 @@ class MissionViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(misionAlert))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+
         setupView()
     }
     
@@ -81,6 +82,7 @@ class MissionViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         perform(#selector(handleNextProy))
+    
     }
     
     //--------------------------------------------------------------
@@ -108,6 +110,7 @@ class MissionViewController: UITableViewController {
     
     @objc func handleNextProy(){
         let first = ProjViewController()
+        //
         self.navigationController?.pushViewController(first, animated: true)
     }
     

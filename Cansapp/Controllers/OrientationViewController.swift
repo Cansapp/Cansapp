@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class OrientationViewController: UIViewController {
 
@@ -30,7 +31,7 @@ class OrientationViewController: UIViewController {
     
     func setupView() {
         //Constraints Label
-        NSLayoutConstraint.activate([oriLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -10), oriLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), oriLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), oriLabel.heightAnchor.constraint(equalToConstant: 25)])
+        NSLayoutConstraint.activate([oriLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -30), oriLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), oriLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), oriLabel.heightAnchor.constraint(equalToConstant: 25)])
     }
 
 }

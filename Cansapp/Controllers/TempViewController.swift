@@ -5,8 +5,8 @@
 //  Created by Jaime ISLAS on 10/07/18.
 //  Copyright © 2018 d182_fernando_r. All rights reserved.
 //
-
 import UIKit
+import Charts
 
 class TempViewController: UIViewController {
 
@@ -29,7 +29,7 @@ class TempViewController: UIViewController {
     
     func setupView() {
         //Constraints Label
-        NSLayoutConstraint.activate([tempLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -10), tempLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), tempLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), tempLabel.heightAnchor.constraint(equalToConstant: 25)])
+        NSLayoutConstraint.activate([tempLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -30), tempLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), tempLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), tempLabel.heightAnchor.constraint(equalToConstant: 25)])
     }
 
 }

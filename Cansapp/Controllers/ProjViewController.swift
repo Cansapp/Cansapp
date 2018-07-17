@@ -9,12 +9,13 @@
 import UIKit
 
 class ProjViewController: UITabBarController {
+    
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         
-        //navigationItem.title = MissionViewController.names
         
         let tempe = TempViewController()
         let tempeController = UINavigationController(rootViewController: tempe)

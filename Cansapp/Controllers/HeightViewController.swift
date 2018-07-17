@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class HeightViewController: UIViewController {
 
@@ -29,6 +30,6 @@ class HeightViewController: UIViewController {
     
     func setupView() {
         //Constraints Label
-        NSLayoutConstraint.activate([altLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -10), altLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), altLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), altLabel.heightAnchor.constraint(equalToConstant: 25)])
+        NSLayoutConstraint.activate([altLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -30), altLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), altLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), altLabel.heightAnchor.constraint(equalToConstant: 25)])
     }
 }

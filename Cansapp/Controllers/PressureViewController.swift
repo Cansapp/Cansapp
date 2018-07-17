@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class PressureViewController: UIViewController {
 
@@ -30,7 +31,7 @@ class PressureViewController: UIViewController {
     
     func setupView() {
         //Constraints Label
-        NSLayoutConstraint.activate([presLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -10), presLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), presLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), presLabel.heightAnchor.constraint(equalToConstant: 25)])
+        NSLayoutConstraint.activate([presLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -30), presLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), presLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), presLabel.heightAnchor.constraint(equalToConstant: 25)])
     }
     
 }
