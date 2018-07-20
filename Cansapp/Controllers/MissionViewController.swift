@@ -10,7 +10,7 @@ import UIKit
 
 class MissionViewController: UITableViewController {
     
-    public var names:[String] = ["Perro", "Gato"]
+    public var names:[String] = []
     
     //Imagen Satelite
     let satImage: UIImageView = {
@@ -52,6 +52,7 @@ class MissionViewController: UITableViewController {
         return cell
     }
     
+    
     //______________________________________________________________
     //Remove by trinling swipe
     
@@ -71,10 +72,7 @@ class MissionViewController: UITableViewController {
         deleteAction.image = UIImage(named: "trash")
         
         /*Para habilitar los servicios que quieres incluir */
-        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
-        
-        print(names)
-        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])        
         return swipeConfiguration
     }
     //--------------------------------------------------------------
@@ -93,16 +91,16 @@ class MissionViewController: UITableViewController {
     }
     
     @objc func misionAlert() {
-        let alert = UIAlertController(title: "Great Title", message: "Please input something", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Proyecto Nuevo", message: "Ingresa el nombre del Proyecto", preferredStyle: UIAlertControllerStyle.alert)
         
-        let action = UIAlertAction(title: "Name Input", style: .default) { (alertAction) in
+        let action = UIAlertAction(title: "Crear Proyecto", style: .default) { (alertAction) in
             let textField = alert.textFields![0] as UITextField
             textField.tintColor = UIColor.black
             self.names.append(textField.text!)
             self.tableView.reloadData()
         }
         alert.addTextField { (textField) in
-            textField.placeholder = "Enter your name"
+            textField.placeholder = "Nombre del Proyecto"
         }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)

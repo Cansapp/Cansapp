@@ -1,0 +1,399 @@
+{
+    "prueba": [
+             {
+             "Altura": 2274.78,
+             "Presion": 768.18,
+             "Temperatura": 26.6
+             },
+             {
+             "Altura": 2279.05,
+             "Presion": 766.13,
+             "Temperatura": 26.0
+             },
+             {
+             "Altura": 2297.52,
+             "Presion": 765.88,
+             "Temperatura": 26.6
+             },
+             {
+             "Altura": 2279.05,
+             "Presion": 766.13,
+             "Temperatura": 26.6
+             },
+             {
+             "Altura": 2297.52,
+             "Presion": 765.88,
+             "Temperatura": 26.6
+             },
+             {
+             "Altura": 2300.33,
+             "Presion": 765.81,
+             "Temperatura": 26.6
+             },
+             {
+             "Altura": 2300.65,
+             "Presion": 765.05,
+             "Temperatura": 26.7
+             },
+             {
+             "Altura": 2309.43,
+             "Presion": 764.11,
+             "Temperatura": 26.7
+             },
+             {
+             "Altura": 2317.48,
+             "Presion": 764.09,
+             "Temperatura": 26.7
+             },
+             {
+             "Altura": 2318.32,
+             "Presion": 764.02,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2318.94,
+             "Presion": 763.85,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2319.36,
+             "Presion": 766.16,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2319.26,
+             "Presion": 766.88,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2315.07,
+             "Presion": 767.05,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2294.38,
+             "Presion": 767.4,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2286.56,
+             "Presion": 767.38,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2286.66,
+             "Presion": 767.35,
+             "Temperatura": 26.7
+             },
+             {
+             "Altura": 2284.78,
+             "Presion": 768.72,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2284.37,
+             "Presion": 768.74,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2278.64,
+             "Presion": 767.92,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2268.53,
+             "Presion": 768.69,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2271.13,
+             "Presion": 764.02,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2274.36,
+             "Presion": 768.58,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2264.68,
+             "Presion": 769.51,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2318.94,
+             "Presion": 770.3,
+             "Temperatura": 26.7
+             },
+             {
+             "Altura": 2261.77,
+             "Presion": 770.18,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2269.16,
+             "Presion": 769.93,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2265.72,
+             "Presion": 771.14,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2251.58,
+             "Presion": 771.18,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2258.65,
+             "Presion": 770.92,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2256.88,
+             "Presion": 772.4,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2244.82,
+             "Presion": 771.64,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2245.03,
+             "Presion": 772.06,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2246.69,
+             "Presion": 772.96,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2230.92,
+             "Presion": 772.29,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2242.95,
+             "Presion": 772.61,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2236.0,
+             "Presion": 773.91,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2226.77,
+             "Presion": 772.73,
+             "Temperatura": 26.8
+             },
+             {
+             "Altura": 2227.7,
+             "Presion": 773.19,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2222.21,
+             "Presion": 774.57,
+             "Temperatura": 36.1
+             },
+             {
+             "Altura": 2217.34,
+             "Presion": 773.4,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2225.21,
+             "Presion": 775.79,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2212.68,
+             "Presion": 775.73,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2207.61,
+             "Presion": 775.79,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.03,
+             "Presion": 775.75,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.65,
+             "Presion": 775.69,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2195.72,
+             "Presion": 775.75,
+             "Temperatura": 36.1
+             },
+             {
+             "Altura": 2196.75,
+             "Presion": 775.81,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.34,
+             "Presion": 775.73,
+             "Temperatura": 36.1
+             },
+             {
+             "Altura": 2196.03,
+             "Presion": 775.78,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.23,
+             "Presion": 775.75,
+             "Temperatura": 36.1
+             },
+             {
+             "Altura": 2197.78,
+             "Presion": 775.68,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.44,
+             "Presion": 775.65,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.54,
+             "Presion": 775.74,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.34,
+             "Presion": 775.89,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2197.27,
+             "Presion": 775.81,
+             "Temperatura": 36.1
+             },
+             {
+             "Altura": 2197.16,
+             "Presion": 775.79,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2197.37,
+             "Presion": 775.78,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.44,
+             "Presion": 775.82,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2195.61,
+             "Presion": 775.78,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.03,
+             "Presion": 775.76,
+             "Temperatura": 36.1
+             },
+             {
+             "Altura": 2195.92,
+             "Presion": 775.78,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2195.92,
+             "Presion": 775.78,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.34,
+             "Presion": 775.84,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.03,
+             "Presion": 775.81,
+             "Temperatura": 36.1
+             },
+             {
+             "Altura": 2196.03,
+             "Presion": 775.75,
+             "Temperatura": 36.1
+             },
+             {
+             "Altura": 2196.44,
+             "Presion": 775.77,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.54,
+             "Presion": 775.79,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2197.06,
+             "Presion": 775.75,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2198.3,
+             "Presion": 775.73,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.44,
+             "Presion": 775.77,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2197.27,
+             "Presion": 775.75,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.85,
+             "Presion": 775.7,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.13,
+             "Presion": 775.8,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2197.27,
+             "Presion": 775.78,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2196.75,
+             "Presion": 775.74,
+             "Temperatura": 36.2
+             },
+             {
+             "Altura": 2197.47,
+             "Presion": 775.76,
+             "Temperatura": 36.1
+             },
+             {
+             "Altura": 2196.44,
+             "Presion": 775.72,
+             "Temperatura": 36.1
+             },
+             {
+             "Altura": 2196.96,
+             "Presion": 775.78,
+             "Temperatura": 36.2
+             }
+             ]
+}

@@ -10,6 +10,8 @@ import UIKit
 import Charts
 
 class PressureViewController: UIViewController {
+    
+    var vals:[Double] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,24 @@ class PressureViewController: UIViewController {
         view.addSubview(lineChartView)
         view.addSubview(connectBtn)
         setupView()
+        
+        guard let path = Bundle.main.path(forResource: "prueba", ofType: "json") else {return}
+        //let url = URL(fileURLWithPath: path)
+        
+        do{
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+            if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let datos  = jsonResult["prueba"] as? [[String:Double]]{
+                //Do Stuff
+                for i in datos{
+                    vals.append(i["Presion"]!)
+                }
+            }
+        }
+        catch{
+            print("error")
+        }
+    
         
     }
     
@@ -50,14 +70,14 @@ class PressureViewController: UIViewController {
     }()
     
     //Funcion inicializar grafica
-    func setChartValues(_ count : Int = 20){
-        let values = (0..<count).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(UInt32(count))+3)
-            return ChartDataEntry(x: Double(i), y: val)
+    func setChartValues(x: Int){
+        let array: [(Int, Double)] = vals.enumerated().map { ($0, $1) }
+        let values = array.map { x, y in
+            return ChartDataEntry(x: Double(x), y: y)
         }
-        let set1 = LineChartDataSet(values: values, label: "MMHG")
+        let set1 = LineChartDataSet(values: values, label: "ºC")
+        set1.colors = [UIColor.red]
         let data = LineChartData(dataSet: set1)
-        
         lineChartView.data = data
     }
     
@@ -73,8 +93,7 @@ class PressureViewController: UIViewController {
     }
     
     @objc func runJson(){
-        let count = Int(arc4random_uniform(20)+3)
-        setChartValues(count)
+        setChartValues(x: vals.count)
     }
     
 }

@@ -10,6 +10,8 @@ import UIKit
 import Charts
 
 class HeightViewController: UIViewController {
+    
+    var vals:[Double] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,29 @@ class HeightViewController: UIViewController {
         view.addSubview(lineChartView)
         view.addSubview(connectBtn)
         setupView()
+        
+        guard let path = Bundle.main.path(forResource: "prueba", ofType: "json") else {return}
+        //let url = URL(fileURLWithPath: path)
+        
+        do{
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+            let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+            if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let datos  = jsonResult["prueba"] as? [[String:Double]]{
+                //Do Stuff
+                for i in datos{
+                    vals.append(i["Altura"]!)
+                }
+            }
+        }
+        catch{
+            print("error")
+        }
+        
     }
+    
+    
+
+
     
     let altLabel: UILabel = {
         let label = UILabel()
@@ -50,13 +74,13 @@ class HeightViewController: UIViewController {
     
     //Funcion inicializar grafica
     func setChartValues(_ count : Int = 20){
-        let values = (0..<count).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(UInt32(count))+3)
-            return ChartDataEntry(x: Double(i), y: val)
+        let array: [(Int, Double)] = vals.enumerated().map { ($0, $1) }
+        let values = array.map { x, y in
+            return ChartDataEntry(x: Double(x), y: y)
         }
-        let set1 = LineChartDataSet(values: values, label: "Metros")
+        let set1 = LineChartDataSet(values: values, label: "ºC")
+        set1.colors = [UIColor.red]
         let data = LineChartData(dataSet: set1)
-        
         lineChartView.data = data
     }
     
@@ -72,8 +96,8 @@ class HeightViewController: UIViewController {
     }
     
     @objc func runJson(){
-        let count = Int(arc4random_uniform(20)+3)
-        setChartValues(count)
+        //let count = Int(arc4random_uniform(20)+3)
+        setChartValues(vals.count)
     }
     
 }
