@@ -10,11 +10,11 @@ import UIKit
 
 class ProjViewController: UITabBarController {
     
-   
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "TUTORIAL", style: UIBarButtonItemStyle.plain, target: self, action:  #selector(pdfDisplay))
         
         
         let tempe = TempViewController()
@@ -38,5 +38,11 @@ class ProjViewController: UITabBarController {
         orientController.tabBarItem.selectedImage = #imageLiteral(resourceName: "orien_F")
         
         viewControllers = [tempeController, pressController, altituController, orientController]
+    }
+    
+    @objc func pdfDisplay(){
+        let first = PdfViewController()
+        //
+        self.navigationController?.pushViewController(first, animated: true)
     }
 }

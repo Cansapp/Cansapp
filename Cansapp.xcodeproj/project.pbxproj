@@ -26,6 +26,8 @@
 		E122406820F52A78005A8B94 /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122406720F52A78005A8B94 /* HeightViewController.swift */; };
 		E123173C2101916D009CC0AB /* JsonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123173B2101916D009CC0AB /* JsonInfo.swift */; };
 		E1CA86272106328700C5FD1B /* NyoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA86262106328700C5FD1B /* NyoService.swift */; };
+		E1CA862B21063F9800C5FD1B /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA862A21063F9800C5FD1B /* PdfViewController.swift */; };
+		E1CA862D210649D200C5FD1B /* tutorial.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E1CA862C210649D200C5FD1B /* tutorial.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		E122406720F52A78005A8B94 /* HeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightViewController.swift; sourceTree = "<group>"; };
 		E123173B2101916D009CC0AB /* JsonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonInfo.swift; sourceTree = "<group>"; };
 		E1CA86262106328700C5FD1B /* NyoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyoService.swift; sourceTree = "<group>"; };
+		E1CA862A21063F9800C5FD1B /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
+		E1CA862C210649D200C5FD1B /* tutorial.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = tutorial.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 		4A2E6C3D20E7FFB0001F404B /* Cansapp */ = {
 			isa = PBXGroup;
 			children = (
+				E1CA862C210649D200C5FD1B /* tutorial.pdf */,
 				E107F3FA2101AE300089D447 /* prueba.json */,
 				E123173A2101914F009CC0AB /* Models */,
 				4FE8BC1320EF0215009BA2BB /* Controllers */,
@@ -218,6 +223,7 @@
 				E122406320F52A49005A8B94 /* PressureViewController.swift */,
 				E122406720F52A78005A8B94 /* HeightViewController.swift */,
 				E122406520F52A63005A8B94 /* OrientationViewController.swift */,
+				E1CA862A21063F9800C5FD1B /* PdfViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CA862D210649D200C5FD1B /* tutorial.pdf in Resources */,
 				4A2E6C4920E7FFB2001F404B /* LaunchScreen.storyboard in Resources */,
 				E107F3FB2101AE300089D447 /* prueba.json in Resources */,
 				4A2E6C4620E7FFB2001F404B /* Assets.xcassets in Resources */,
@@ -454,6 +461,7 @@
 				E122406420F52A49005A8B94 /* PressureViewController.swift in Sources */,
 				4A2E6C3F20E7FFB0001F404B /* AppDelegate.swift in Sources */,
 				E123173C2101916D009CC0AB /* JsonInfo.swift in Sources */,
+				E1CA862B21063F9800C5FD1B /* PdfViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
