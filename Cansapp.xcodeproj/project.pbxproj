@@ -25,6 +25,7 @@
 		E122406620F52A63005A8B94 /* OrientationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122406520F52A63005A8B94 /* OrientationViewController.swift */; };
 		E122406820F52A78005A8B94 /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122406720F52A78005A8B94 /* HeightViewController.swift */; };
 		E123173C2101916D009CC0AB /* JsonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123173B2101916D009CC0AB /* JsonInfo.swift */; };
+		E1CA86272106328700C5FD1B /* NyoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA86262106328700C5FD1B /* NyoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		E122406520F52A63005A8B94 /* OrientationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationViewController.swift; sourceTree = "<group>"; };
 		E122406720F52A78005A8B94 /* HeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightViewController.swift; sourceTree = "<group>"; };
 		E123173B2101916D009CC0AB /* JsonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonInfo.swift; sourceTree = "<group>"; };
+		E1CA86262106328700C5FD1B /* NyoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				E123173B2101916D009CC0AB /* JsonInfo.swift */,
+				E1CA86262106328700C5FD1B /* NyoService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				4FE8BC1520EF134E009BA2BB /* MissionViewController.swift in Sources */,
 				4FE8BC1720EF1814009BA2BB /* SatViewController.swift in Sources */,
 				E122406820F52A78005A8B94 /* HeightViewController.swift in Sources */,
+				E1CA86272106328700C5FD1B /* NyoService.swift in Sources */,
 				E122406220F52A35005A8B94 /* TempViewController.swift in Sources */,
 				4A2E6C4120E7FFB0001F404B /* ViewController.swift in Sources */,
 				E122406020F519B4005A8B94 /* ProjViewController.swift in Sources */,
