@@ -25,6 +25,7 @@
 		E122406620F52A63005A8B94 /* OrientationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122406520F52A63005A8B94 /* OrientationViewController.swift */; };
 		E122406820F52A78005A8B94 /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122406720F52A78005A8B94 /* HeightViewController.swift */; };
 		E123173C2101916D009CC0AB /* JsonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123173B2101916D009CC0AB /* JsonInfo.swift */; };
+		E1C5E2B02107820000FCC44A /* UserLoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5E2AF2107820000FCC44A /* UserLoc.swift */; };
 		E1CA86272106328700C5FD1B /* NyoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA86262106328700C5FD1B /* NyoService.swift */; };
 		E1CA862B21063F9800C5FD1B /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA862A21063F9800C5FD1B /* PdfViewController.swift */; };
 		E1CA862D210649D200C5FD1B /* tutorial.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E1CA862C210649D200C5FD1B /* tutorial.pdf */; };
@@ -101,6 +102,7 @@
 		E122406520F52A63005A8B94 /* OrientationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationViewController.swift; sourceTree = "<group>"; };
 		E122406720F52A78005A8B94 /* HeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightViewController.swift; sourceTree = "<group>"; };
 		E123173B2101916D009CC0AB /* JsonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonInfo.swift; sourceTree = "<group>"; };
+		E1C5E2AF2107820000FCC44A /* UserLoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoc.swift; sourceTree = "<group>"; };
 		E1CA86262106328700C5FD1B /* NyoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyoService.swift; sourceTree = "<group>"; };
 		E1CA862A21063F9800C5FD1B /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
 		E1CA862C210649D200C5FD1B /* tutorial.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = tutorial.pdf; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			children = (
 				E123173B2101916D009CC0AB /* JsonInfo.swift */,
 				E1CA86262106328700C5FD1B /* NyoService.swift */,
+				E1C5E2AF2107820000FCC44A /* UserLoc.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				E122406020F519B4005A8B94 /* ProjViewController.swift in Sources */,
 				E122406620F52A63005A8B94 /* OrientationViewController.swift in Sources */,
 				E122406420F52A49005A8B94 /* PressureViewController.swift in Sources */,
+				E1C5E2B02107820000FCC44A /* UserLoc.swift in Sources */,
 				4A2E6C3F20E7FFB0001F404B /* AppDelegate.swift in Sources */,
 				E123173C2101916D009CC0AB /* JsonInfo.swift in Sources */,
 				E1CA862B21063F9800C5FD1B /* PdfViewController.swift in Sources */,

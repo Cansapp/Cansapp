@@ -12,23 +12,23 @@ import MapKit
 class SatViewController: UIViewController {
     
     var mapView: MKMapView!
+    var loc = UserLoc()
     
     override func loadView() {
         mapView = MKMapView()
         view = mapView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loc.startReceivingLocationChanges()
         setupView()
     }
-
+    
     func setupView(){
         view.backgroundColor = UIColor.white
         navigationItem.title = "Satelites"
-        
     }
-    
-    
 
+    
 }
