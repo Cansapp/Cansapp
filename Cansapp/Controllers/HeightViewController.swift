@@ -40,10 +40,6 @@ class HeightViewController: UIViewController {
         
     }
     
-    
-
-
-    
     let altLabel: UILabel = {
         let label = UILabel()
         label.text = "Altura"

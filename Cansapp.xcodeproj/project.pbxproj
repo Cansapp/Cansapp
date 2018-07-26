@@ -13,6 +13,8 @@
 		4A2E6C4920E7FFB2001F404B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2E6C4720E7FFB2001F404B /* LaunchScreen.storyboard */; };
 		4A2E6C5420E7FFB2001F404B /* CansappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E6C5320E7FFB2001F404B /* CansappTests.swift */; };
 		4A2E6C5F20E7FFB2001F404B /* CansappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E6C5E20E7FFB2001F404B /* CansappUITests.swift */; };
+		4FCC3EDD21091B22004C4B61 /* SatPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC3EDC21091B22004C4B61 /* SatPositions.swift */; };
+		4FE410302108F3A200CCDE9B /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE4102F2108F3A200CCDE9B /* Charts.framework */; };
 		4FE8BC1520EF134E009BA2BB /* MissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8BC1420EF134E009BA2BB /* MissionViewController.swift */; };
 		4FE8BC1720EF1814009BA2BB /* SatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE8BC1620EF1814009BA2BB /* SatViewController.swift */; };
 		88DFD146F81F3DF0CE2D21FA /* Pods_CansappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10DAAC0D8EE9B29FE3E6FED /* Pods_CansappUITests.framework */; };
@@ -86,6 +88,8 @@
 		4A2E6C5A20E7FFB2001F404B /* CansappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CansappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2E6C5E20E7FFB2001F404B /* CansappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CansappUITests.swift; sourceTree = "<group>"; };
 		4A2E6C6020E7FFB2001F404B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FCC3EDC21091B22004C4B61 /* SatPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatPositions.swift; sourceTree = "<group>"; };
+		4FE4102F2108F3A200CCDE9B /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FE8BC1420EF134E009BA2BB /* MissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionViewController.swift; sourceTree = "<group>"; };
 		4FE8BC1620EF1814009BA2BB /* SatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatViewController.swift; sourceTree = "<group>"; };
 		73D66EF6B072F8138011B79B /* Pods-CansappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CansappTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CansappTests/Pods-CansappTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FE410302108F3A200CCDE9B /* Charts.framework in Frameworks */,
 				BEF17592D85E76B85A18F112 /* Pods_Cansapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +157,7 @@
 		2C209BD2414D491294B531D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4FE4102F2108F3A200CCDE9B /* Charts.framework */,
 				190E02B6F81770F7D73F999E /* Pods_Cansapp.framework */,
 				B1DDC50B311D8BB6BD67670D /* Pods_CansappTests.framework */,
 				E10DAAC0D8EE9B29FE3E6FED /* Pods_CansappUITests.framework */,
@@ -186,9 +192,10 @@
 			children = (
 				E1CA862C210649D200C5FD1B /* tutorial.pdf */,
 				E107F3FA2101AE300089D447 /* prueba.json */,
-				E123173A2101914F009CC0AB /* Models */,
+				4FCC3EDB21091AED004C4B61 /* Models */,
+				E123173A2101914F009CC0AB /* Services */,
 				4FE8BC1320EF0215009BA2BB /* Controllers */,
-				4A2E6C3E20E7FFB0001F404B /* AppDelegate.swift */,
+				4FE410312108F9C900CCDE9B /* Delegates */,
 				4A2E6C4520E7FFB2001F404B /* Assets.xcassets */,
 				4A2E6C4720E7FFB2001F404B /* LaunchScreen.storyboard */,
 				4A2E6C4A20E7FFB2001F404B /* Info.plist */,
@@ -214,6 +221,24 @@
 			path = CansappUITests;
 			sourceTree = "<group>";
 		};
+		4FCC3EDB21091AED004C4B61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FCC3EDC21091B22004C4B61 /* SatPositions.swift */,
+				E123173B2101916D009CC0AB /* JsonInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4FE410312108F9C900CCDE9B /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E1C5E2AF2107820000FCC44A /* UserLoc.swift */,
+				4A2E6C3E20E7FFB0001F404B /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		4FE8BC1320EF0215009BA2BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,14 +255,12 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		E123173A2101914F009CC0AB /* Models */ = {
+		E123173A2101914F009CC0AB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E123173B2101916D009CC0AB /* JsonInfo.swift */,
 				E1CA86262106328700C5FD1B /* NyoService.swift */,
-				E1C5E2AF2107820000FCC44A /* UserLoc.swift */,
 			);
-			path = Models;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +483,7 @@
 				E122406220F52A35005A8B94 /* TempViewController.swift in Sources */,
 				4A2E6C4120E7FFB0001F404B /* ViewController.swift in Sources */,
 				E122406020F519B4005A8B94 /* ProjViewController.swift in Sources */,
+				4FCC3EDD21091B22004C4B61 /* SatPositions.swift in Sources */,
 				E122406620F52A63005A8B94 /* OrientationViewController.swift in Sources */,
 				E122406420F52A49005A8B94 /* PressureViewController.swift in Sources */,
 				E1C5E2B02107820000FCC44A /* UserLoc.swift in Sources */,

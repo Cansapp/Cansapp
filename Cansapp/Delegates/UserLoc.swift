@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 class UserLoc {
     
@@ -18,6 +19,8 @@ class UserLoc {
     }()
     
     func startReceivingLocationChanges() {
+        
+        //Se revisa si se ha dado autorizacion
         let authorizationStatus = CLLocationManager.authorizationStatus()
         if authorizationStatus != .authorizedWhenInUse && authorizationStatus != .authorizedAlways {
             // User has not authorized access to location information.
@@ -30,13 +33,16 @@ class UserLoc {
             print("No enable")
             return
         }
-        // Configure and start the service.
+        
+        // Se inicia a consumir el servicio
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.distanceFilter = 100.0  // In meters.
         locationManager.startUpdatingLocation()
-        let location = locationManager.location
-        let alt = location?.altitude
-        print("Localizacion: \(location!) Altura: \(String(describing: alt))")
+        let lat = locationManager.location?.coordinate.latitude
+        let lon = locationManager.location?.coordinate.longitude
+        let alt = locationManager.location?.altitude
+        
+        print("Lat: \(String(describing: lat)) lon: \(String(describing: lon)) alt: \(String(describing: alt)) ")
         //print(alt!)
         locationManager.stopUpdatingLocation()
     }

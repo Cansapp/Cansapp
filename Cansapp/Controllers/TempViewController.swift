@@ -82,7 +82,6 @@ class TempViewController: UIViewController {
         lineChartView.data = data
     }
     
-  
     
     func setupView() {
         //Constraints Label
