@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     //Boton Proyecto
     let proyButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Mision", for: .normal)
+        button.setTitle("Misión", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(handleNextProy), for: .touchUpInside)

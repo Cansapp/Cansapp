@@ -10,7 +10,7 @@ import UIKit
 
 class MissionViewController: UITableViewController {
     
-    public var names:[String] = []
+    public var names:[String] = ["Cansapp UNAM"]
     
     //Imagen Satelite
     let satImage: UIImageView = {
@@ -87,7 +87,7 @@ class MissionViewController: UITableViewController {
 
     func setupView(){
         view.backgroundColor = UIColor.white
-        navigationItem.title = "Mision"
+        navigationItem.title = "Misión"
     }
     
     @objc func misionAlert() {

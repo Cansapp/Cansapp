@@ -9,7 +9,29 @@
 import UIKit
 import Charts
 
-class HeightViewController: UIViewController {
+class HeightViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vals.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        cell.textLabel?.text = String("En el segundo \(indexPath.row + 1): se midierón \(vals[indexPath.row]) Metros")
+        if indexPath.row % 2 == 0{
+            cell.backgroundColor = UIColor.lightGray
+        }else{
+            cell.backgroundColor = UIColor.darkGray
+            cell.textLabel?.textColor = UIColor.white
+        }
+        return cell
+    }
+    
+    let tableView: UITableView = {
+        let tableview = UITableView()
+        tableview.translatesAutoresizingMaskIntoConstraints = false
+        return tableview
+    }()
     
     var vals:[Double] = []
 
@@ -19,6 +41,10 @@ class HeightViewController: UIViewController {
         view.addSubview(altLabel)
         view.addSubview(lineChartView)
         view.addSubview(connectBtn)
+        view.addSubview(tableView)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        tableView.delegate = self
+        tableView.dataSource = self
         setupView()
         
         guard let path = Bundle.main.path(forResource: "prueba", ofType: "json") else {return}
@@ -74,7 +100,7 @@ class HeightViewController: UIViewController {
         let values = array.map { x, y in
             return ChartDataEntry(x: Double(x), y: y)
         }
-        let set1 = LineChartDataSet(values: values, label: "ºC")
+        let set1 = LineChartDataSet(values: values, label: "Metros")
         set1.colors = [UIColor.red]
         let data = LineChartData(dataSet: set1)
         lineChartView.data = data
@@ -88,7 +114,10 @@ class HeightViewController: UIViewController {
         NSLayoutConstraint.activate([lineChartView.topAnchor.constraint(equalTo: altLabel.bottomAnchor, constant: 30), lineChartView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -8), lineChartView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 8), lineChartView.heightAnchor.constraint(equalToConstant: 400)])
         
         //Constraint Boton
-        NSLayoutConstraint.activate([connectBtn.topAnchor.constraint(equalTo: lineChartView.bottomAnchor, constant: 15), connectBtn.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -30), connectBtn.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 30), connectBtn.heightAnchor.constraint(equalToConstant: 25)])
+        NSLayoutConstraint.activate([connectBtn.topAnchor.constraint(equalTo: lineChartView.bottomAnchor, constant: 5), connectBtn.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -30), connectBtn.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 30), connectBtn.heightAnchor.constraint(equalToConstant: 25)])
+        
+        //Constraint tabla
+        NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: connectBtn.bottomAnchor), tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor), tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor), tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)])
     }
     
     @objc func runJson(){
