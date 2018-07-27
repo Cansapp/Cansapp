@@ -221,6 +221,29 @@
 			path = CansappUITests;
 			sourceTree = "<group>";
 		};
+		4FBC3652210AE0FF00280DF3 /* MainViewStack */ = {
+			isa = PBXGroup;
+			children = (
+				4A2E6C4020E7FFB0001F404B /* ViewController.swift */,
+				4FE8BC1420EF134E009BA2BB /* MissionViewController.swift */,
+				4FE8BC1620EF1814009BA2BB /* SatViewController.swift */,
+			);
+			path = MainViewStack;
+			sourceTree = "<group>";
+		};
+		4FBC3653210AE15A00280DF3 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E122405F20F519B4005A8B94 /* ProjViewController.swift */,
+				E122406120F52A35005A8B94 /* TempViewController.swift */,
+				E122406720F52A78005A8B94 /* HeightViewController.swift */,
+				E122406320F52A49005A8B94 /* PressureViewController.swift */,
+				E122406520F52A63005A8B94 /* OrientationViewController.swift */,
+				E1CA862A21063F9800C5FD1B /* PdfViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		4FCC3EDB21091AED004C4B61 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,15 +265,8 @@
 		4FE8BC1320EF0215009BA2BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4A2E6C4020E7FFB0001F404B /* ViewController.swift */,
-				4FE8BC1420EF134E009BA2BB /* MissionViewController.swift */,
-				E122405F20F519B4005A8B94 /* ProjViewController.swift */,
-				4FE8BC1620EF1814009BA2BB /* SatViewController.swift */,
-				E122406120F52A35005A8B94 /* TempViewController.swift */,
-				E122406720F52A78005A8B94 /* HeightViewController.swift */,
-				E122406320F52A49005A8B94 /* PressureViewController.swift */,
-				E122406520F52A63005A8B94 /* OrientationViewController.swift */,
-				E1CA862A21063F9800C5FD1B /* PdfViewController.swift */,
+				4FBC3653210AE15A00280DF3 /* TabBar */,
+				4FBC3652210AE0FF00280DF3 /* MainViewStack */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
