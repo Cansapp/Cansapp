@@ -61,6 +61,7 @@ class TempViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     let lineChartView: LineChartView = {
         let chart = LineChartView()
+        chart.chartDescription?.text = "Temperature Chart"
         chart.translatesAutoresizingMaskIntoConstraints = false
         return chart
     }()

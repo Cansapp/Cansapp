@@ -10,9 +10,8 @@ import UIKit
 
 class MissionViewController: UITableViewController {
     
-    public var names:[String] = ["Cansapp UNAM"]
-    
-    //Imagen Satelite
+    public var names:[String] = ["Cansat UNAM"]
+        //Imagen Satelite
     let satImage: UIImageView = {
         let imagen = UIImageView(image: #imageLiteral(resourceName: "satIcon"))
         imagen.translatesAutoresizingMaskIntoConstraints = false

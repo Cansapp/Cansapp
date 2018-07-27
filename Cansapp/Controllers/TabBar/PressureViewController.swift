@@ -61,6 +61,7 @@ class PressureViewController: UIViewController, UITableViewDataSource, UITableVi
     let lineChartView: LineChartView = {
         let chart = LineChartView()
         chart.translatesAutoresizingMaskIntoConstraints = false
+        chart.chartDescription?.text = "Presure Chart"
         return chart
     }()
     

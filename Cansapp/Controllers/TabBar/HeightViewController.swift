@@ -60,6 +60,7 @@ class HeightViewController: UIViewController, UITableViewDataSource, UITableView
     
     let lineChartView: LineChartView = {
         let chart = LineChartView()
+        chart.chartDescription?.text = "Height Chart"
         chart.translatesAutoresizingMaskIntoConstraints = false
         return chart
     }()
