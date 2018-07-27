@@ -46,25 +46,6 @@ class PressureViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         setupView()
-        
-        guard let path = Bundle.main.path(forResource: "prueba", ofType: "json") else {return}
-        //let url = URL(fileURLWithPath: path)
-        
-        do{
-            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-            let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-            if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let datos  = jsonResult["prueba"] as? [[String:Double]]{
-                //Do Stuff
-                for i in datos{
-                    vals.append(i["Presion"]!)
-                }
-            }
-        }
-        catch{
-            print("error")
-        }
-    
-        
     }
     
     let presLabel: UILabel = {
@@ -123,6 +104,29 @@ class PressureViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @objc func runJson(){
         setChartValues(x: vals.count)
+        addValues()
+        tableView.reloadData()
+    }
+    
+    func addValues(){
+        guard let path = Bundle.main.path(forResource: "prueba", ofType: "json") else {return}
+        //let url = URL(fileURLWithPath: path)
+        if vals == []{
+            do{
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let datos  = jsonResult["prueba"] as? [[String:Double]]{
+                    //Do Stuff
+                    for i in datos{
+                        vals.append(i["Presion"]!)
+                    }
+                }
+            }
+            catch{
+                print("error")
+            }
+        }
+        else{return}
     }
     
 }

@@ -45,24 +45,6 @@ class TempViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
         tableView.dataSource = self
         setupView()
-        
-        
-        guard let path = Bundle.main.path(forResource: "prueba", ofType: "json") else {return}
-        //let url = URL(fileURLWithPath: path)
-            
-            do{
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let datos  = jsonResult["prueba"] as? [[String:Double]]{
-                    //Do Stuff
-                    for i in datos{
-                        vals.append(i["Temperatura"]!)
-                    }
-                }
-                }
-            catch{
-                print("error")
-            }
         }
     
     
@@ -126,8 +108,30 @@ class TempViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     @objc func runJson(){
-        //let count = Int(arc4random_uniform(20)+3)
+        addValues()
         setChartValues(x: vals.count)
+        tableView.reloadData()
     }
+        
+        func addValues(){
+            guard let path = Bundle.main.path(forResource: "prueba", ofType: "json") else {return}
+            //let url = URL(fileURLWithPath: path)
+            if vals == []{
+            do{
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let datos  = jsonResult["prueba"] as? [[String:Double]]{
+                    //Do Stuff
+                    for i in datos{
+                        vals.append(i["Temperatura"]!)
+                    }
+                }
+            }
+            catch{
+                print("error")
+            }
+            }
+            else{return}
+        }
 
 }
