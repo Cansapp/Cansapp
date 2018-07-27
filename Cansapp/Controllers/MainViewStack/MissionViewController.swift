@@ -95,8 +95,11 @@ class MissionViewController: UITableViewController {
         let action = UIAlertAction(title: "Crear Proyecto", style: .default) { (alertAction) in
             let textField = alert.textFields![0] as UITextField
             textField.tintColor = UIColor.black
+            if textField.text == ""{
+                print("error")
+            }else{
             self.names.append(textField.text!)
-            self.tableView.reloadData()
+                self.tableView.reloadData()}
         }
         alert.addTextField { (textField) in
             textField.placeholder = "Nombre del Proyecto"
