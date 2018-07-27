@@ -48,6 +48,18 @@ class ViewController: UIViewController {
         button.isEnabled = true
         return button
     }()
+    
+    //Boton Guia
+    let guideButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Guia", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(pdfDisplay), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isEnabled = true
+        return button
+    }()
 
     //Imagen Satelite
     let satImage: UIImageView = {
@@ -59,13 +71,12 @@ class ViewController: UIViewController {
     
     //Se agregan constraints
     func setupView(){
-        
-         view.backgroundColor = UIColor.white
-        
+        view.backgroundColor = UIColor.white
         view.addSubview(satLabel)
         view.addSubview(satButton)
         view.addSubview(proyButton)
         view.addSubview(satImage)
+        view.addSubview(guideButton)
         
         //Constraints Label
         NSLayoutConstraint.activate([satLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20), satLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), satLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), satLabel.heightAnchor.constraint(equalToConstant: 45)])
@@ -73,11 +84,15 @@ class ViewController: UIViewController {
         //Constraints Imagen
         NSLayoutConstraint.activate([satImage.topAnchor.constraint(equalTo: satLabel.bottomAnchor, constant: 30),satImage.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -50), satImage.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 50),satImage.heightAnchor.constraint(equalToConstant: 200)])
         
-        //Boton de abajo alv
+        //Boton proyecto
         NSLayoutConstraint.activate([proyButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -100), proyButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 90), proyButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -90), proyButton.heightAnchor.constraint(equalToConstant: 45)])
         
-        //Boton de arriba
+        //Boton Satelites
         NSLayoutConstraint.activate([satButton.bottomAnchor.constraint(equalTo: proyButton.topAnchor, constant: -20), satButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 90), satButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -90), satButton.heightAnchor.constraint(equalToConstant: 45)])
+        
+        //Boton Guia
+        NSLayoutConstraint.activate([guideButton.bottomAnchor.constraint(equalTo: satButton.topAnchor, constant: -20), guideButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 90), guideButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -90), guideButton.heightAnchor.constraint(equalToConstant: 45)])
+        
     }
     
     @objc func handleNextProy(){
@@ -88,6 +103,16 @@ class ViewController: UIViewController {
     @objc func handleNextSat(){
         let sat = SatViewController()
         self.navigationController?.pushViewController(sat, animated: true)
+    }
+    
+//    @objc func handleNextInfo(){
+//        let info = InfoViewController()
+//        self.navigationController?.pushViewController(info, animated: true)
+//    }
+    
+    @objc func pdfDisplay(){
+        let first = PdfViewController()
+        self.navigationController?.pushViewController(first, animated: true)
     }
 
 }

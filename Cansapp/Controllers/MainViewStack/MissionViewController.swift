@@ -11,13 +11,6 @@ import UIKit
 class MissionViewController: UITableViewController {
     
     public var names:[String] = ["Cansat UNAM"]
-        //Imagen Satelite
-    let satImage: UIImageView = {
-        let imagen = UIImageView(image: #imageLiteral(resourceName: "satIcon"))
-        imagen.translatesAutoresizingMaskIntoConstraints = false
-        imagen.contentMode = .scaleAspectFit
-        return imagen
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
