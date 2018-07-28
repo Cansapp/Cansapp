@@ -9,29 +9,7 @@
 import UIKit
 import Charts
 
-class HeightViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vals.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        cell.textLabel?.text = String("En el segundo \(indexPath.row + 1): se midierón \(vals[indexPath.row]) Metros")
-        if indexPath.row % 2 == 0{
-            cell.backgroundColor = UIColor.lightGray
-        }else{
-            cell.backgroundColor = UIColor.darkGray
-            cell.textLabel?.textColor = UIColor.white
-        }
-        return cell
-    }
-    
-    let tableView: UITableView = {
-        let tableview = UITableView()
-        tableview.translatesAutoresizingMaskIntoConstraints = false
-        return tableview
-    }()
+class HeightViewController: UIViewController{
     
     var vals:[Double] = []
 
@@ -41,10 +19,8 @@ class HeightViewController: UIViewController, UITableViewDataSource, UITableView
         view.addSubview(altLabel)
         view.addSubview(lineChartView)
         view.addSubview(connectBtn)
-        view.addSubview(tableView)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-        tableView.delegate = self
-        tableView.dataSource = self
+        view.addSubview(exportBtn)
+        view.addSubview(dataBtn)
         setupView()
     }
     
@@ -57,7 +33,7 @@ class HeightViewController: UIViewController, UITableViewDataSource, UITableView
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+    //LineChart
     let lineChartView: LineChartView = {
         let chart = LineChartView()
         chart.chartDescription?.text = "Height Chart"
@@ -65,13 +41,37 @@ class HeightViewController: UIViewController, UITableViewDataSource, UITableView
         return chart
     }()
     
+     //Boton conectar
     let connectBtn: UIButton = {
         let button = UIButton()
         button.setTitle("Conectar", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = UIColor.cyan
         button.addTarget(self, action: #selector(runJson), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isEnabled = true
+        return button
+    }()
+    
+    //Boton exportar
+    let exportBtn: UIButton = {
+        let button = UIButton()
+        button.setTitle("Exportar", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(saveChart), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isEnabled = true
+        return button
+    }()
+    
+    //Boton Datos
+    let dataBtn: UIButton = {
+        let button = UIButton()
+        button.setTitle("Datos", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(dataDisplay), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isEnabled = true
         return button
@@ -89,30 +89,16 @@ class HeightViewController: UIViewController, UITableViewDataSource, UITableView
         lineChartView.data = data
     }
     
-    func setupView() {
-        //Constraints Label
-        NSLayoutConstraint.activate([altLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -30), altLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), altLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), altLabel.heightAnchor.constraint(equalToConstant: 25)])
-        
-        //Constraint vista Grafica
-        NSLayoutConstraint.activate([lineChartView.topAnchor.constraint(equalTo: altLabel.bottomAnchor, constant: 30), lineChartView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -8), lineChartView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 8), lineChartView.heightAnchor.constraint(equalToConstant: 400)])
-        
-        //Constraint Boton
-        NSLayoutConstraint.activate([connectBtn.topAnchor.constraint(equalTo: lineChartView.bottomAnchor, constant: 5), connectBtn.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -30), connectBtn.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 30), connectBtn.heightAnchor.constraint(equalToConstant: 25)])
-        
-        //Constraint tabla
-        NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: connectBtn.bottomAnchor), tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor), tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor), tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)])
-    }
-    
-    @objc func runJson(){
-        //let count = Int(arc4random_uniform(20)+3)
-        addValues()
-        setChartValues(vals.count)
-        tableView.reloadData()
-    }
+    let alertController: UIAlertController = {
+        let alert = UIAlertController()
+        alert.title = "Grafica Exportada"
+        alert.message = "La grafica se ha guardado en la galeria de fotos"
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        return alert
+    }()
     
     func addValues(){
         guard let path = Bundle.main.path(forResource: "prueba", ofType: "json") else {return}
-        //let url = URL(fileURLWithPath: path)
         if vals == []{
             do{
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
@@ -130,5 +116,41 @@ class HeightViewController: UIViewController, UITableViewDataSource, UITableView
         }
         else{return}
     }
+    
+    func setupView() {
+        //Constraints Label
+        NSLayoutConstraint.activate([altLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -30), altLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), altLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), altLabel.heightAnchor.constraint(equalToConstant: 25)])
+        
+        //Constraint vista Grafica
+        NSLayoutConstraint.activate([lineChartView.topAnchor.constraint(equalTo: altLabel.bottomAnchor, constant: 30), lineChartView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -8), lineChartView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 8), lineChartView.heightAnchor.constraint(equalToConstant: 400)])
+        
+        //Constraint Boton
+        NSLayoutConstraint.activate([connectBtn.topAnchor.constraint(equalTo: lineChartView.bottomAnchor, constant: 5), connectBtn.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -30), connectBtn.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 30), connectBtn.heightAnchor.constraint(equalToConstant: 25)])
+        
+        //Constraint Boton Exportar
+        NSLayoutConstraint.activate([exportBtn.topAnchor.constraint(equalTo: connectBtn.bottomAnchor, constant: 15), exportBtn.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -30), exportBtn.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 30), exportBtn.heightAnchor.constraint(equalToConstant: 15)])
+        
+        //Constraint Boton Datos
+        NSLayoutConstraint.activate([dataBtn.topAnchor.constraint(equalTo: exportBtn.bottomAnchor, constant: 15), dataBtn.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -30), dataBtn.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 30), dataBtn.heightAnchor.constraint(equalToConstant: 15)])
+        
+    }
+    
+    @objc func runJson(){
+        addValues()
+        setChartValues(vals.count)
+    }
+    
+    @objc func saveChart(){
+        let image = lineChartView.getChartImage(transparent: false)
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc func dataDisplay(){
+        let first = HeightTableViewController()
+        present(first, animated: true, completion: nil)
+    }
+    
+
     
 }

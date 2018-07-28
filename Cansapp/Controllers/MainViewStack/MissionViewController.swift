@@ -16,43 +16,28 @@ class MissionViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(misionAlert))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-       // tableView.rowHeight = 30
         setupView()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return names.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        //Para colorear celdas despues
-//        if indexPath.row % 2 == 0{
-//            cell.backgroundColor = UIColor.lightGray
-//        }else{
-//            cell.backgroundColor = UIColor.darkGray
-//            cell.textLabel?.textColor = UIColor.white
-//        }
-        // Configure the cell...
         cell.textLabel?.text = names[indexPath.row]
         return cell
     }
     
     
-    //______________________________________________________________
-    //Remove by trinling swipe
+
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        /* UIContextualAction nos permite hacer los swift a la derecha/izquierda, personalidados.*/
-        
-        /* Style se va ver rojo y la etiqueta es bórrame.*/
+
         let deleteAction = UIContextualAction(style: .destructive, title: "Bórrame") { (action, sourceView, completionHandler) in
             /*Se borra del modelo y del tableVIew*/
             self.names.remove(at: indexPath.row)
@@ -62,20 +47,15 @@ class MissionViewController: UITableViewController {
         
         deleteAction.backgroundColor = UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1.0)
         deleteAction.image = UIImage(named: "trash")
-        
-        /*Para habilitar los servicios que quieres incluir */
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])        
         return swipeConfiguration
     }
-    //--------------------------------------------------------------
-    //Segue to project view
+
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         perform(#selector(handleNextProy))
     
     }
-    
-    //--------------------------------------------------------------
 
     func setupView(){
         view.backgroundColor = UIColor.white

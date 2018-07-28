@@ -20,12 +20,8 @@ class TempViewController: UIViewController{
         view.addSubview(connectBtn)
         view.addSubview(exportBtn)
         view.addSubview(dataBtn)
-      //  view.addSubview(stackview)
-        //fillStackView()
         setupView()
         }
-    
-    
     
     let tempLabel: UILabel = {
         let label = UILabel()
@@ -80,17 +76,6 @@ class TempViewController: UIViewController{
         return button
     }()
     
-    //StackView
-    let stackview: UIStackView = {
-       let stack = UIStackView()
-        stack.axis = UILayoutConstraintAxis.vertical
-        stack.distribution = UIStackViewDistribution.equalSpacing
-        stack.alignment = UIStackViewAlignment.center
-        stack.spacing = 0
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
-    
     
     //Funcion inicializar grafica
     func setChartValues(x: Int){
@@ -103,12 +88,6 @@ class TempViewController: UIViewController{
         let data = LineChartData(dataSet: set1)
         lineChartView.data = data
     }
-    
-//    func fillStackView(){
-//        stackview.addArrangedSubview(connectBtn)
-//        stackview.addArrangedSubview(exportBtn)
-//        stackview.addArrangedSubview(dataBtn)
-//    }
     
 
     let alertController: UIAlertController = {
@@ -142,7 +121,7 @@ class TempViewController: UIViewController{
     
     func setupView() {
         //Constraints Label
-        NSLayoutConstraint.activate([tempLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor), tempLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), tempLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), tempLabel.heightAnchor.constraint(equalToConstant: 20)])
+        NSLayoutConstraint.activate([tempLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -30), tempLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -20), tempLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 10), tempLabel.heightAnchor.constraint(equalToConstant: 25)])
         
         NSLayoutConstraint.activate([lineChartView.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: 10), lineChartView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -8), lineChartView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 8), lineChartView.heightAnchor.constraint(equalToConstant: 400)])
         
@@ -154,9 +133,6 @@ class TempViewController: UIViewController{
 
         //Constraint Boton Datos
         NSLayoutConstraint.activate([dataBtn.topAnchor.constraint(equalTo: exportBtn.bottomAnchor, constant: 15), dataBtn.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -30), dataBtn.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 30), dataBtn.heightAnchor.constraint(equalToConstant: 15)])
-        
-//        //Constraint stack
-//        NSLayoutConstraint.activate([stackview.topAnchor.constraint(equalTo: lineChartView.bottomAnchor, constant: 50), stackview.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: -30), stackview.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 30), stackview.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
         
     }
     
@@ -176,7 +152,6 @@ class TempViewController: UIViewController{
     
     @objc func dataDisplay(){
         let first = TempTableViewController()
-        //self.navigationController?.pushViewController(first, animated: true)
         present(first, animated: true, completion: nil)
     }
     

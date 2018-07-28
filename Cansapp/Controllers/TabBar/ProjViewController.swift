@@ -13,8 +13,8 @@ class ProjViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "TUTORIAL", style: UIBarButtonItemStyle.plain, target: self, action:  #selector(pdfDisplay))
+        self.navigationItem.title = "Dashboard"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Guia", style: UIBarButtonItemStyle.plain, target: self, action:  #selector(pdfDisplay))
         
         
         let tempe = TempViewController()
@@ -32,12 +32,12 @@ class ProjViewController: UITabBarController {
         altituController.tabBarItem.image = #imageLiteral(resourceName: "altit")
         altituController.tabBarItem.selectedImage = #imageLiteral(resourceName: "altit_F")
         
-        let orienta = OrientationViewController()
-        let orientController = UINavigationController(rootViewController: orienta)
-        orientController.tabBarItem.image = #imageLiteral(resourceName: "orien")
-        orientController.tabBarItem.selectedImage = #imageLiteral(resourceName: "orien_F")
+//        let orienta = OrientationViewController()
+//        let orientController = UINavigationController(rootViewController: orienta)
+//        orientController.tabBarItem.image = #imageLiteral(resourceName: "orien")
+//        orientController.tabBarItem.selectedImage = #imageLiteral(resourceName: "orien_F")
         
-        viewControllers = [tempeController, pressController, altituController, orientController]
+        viewControllers = [tempeController, pressController, altituController]
     }
     
     @objc func pdfDisplay(){

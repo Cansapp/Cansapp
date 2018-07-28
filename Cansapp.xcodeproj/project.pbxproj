@@ -27,12 +27,13 @@
 		E122406020F519B4005A8B94 /* ProjViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122405F20F519B4005A8B94 /* ProjViewController.swift */; };
 		E122406220F52A35005A8B94 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122406120F52A35005A8B94 /* TempViewController.swift */; };
 		E122406420F52A49005A8B94 /* PressureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122406320F52A49005A8B94 /* PressureViewController.swift */; };
-		E122406620F52A63005A8B94 /* OrientationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122406520F52A63005A8B94 /* OrientationViewController.swift */; };
 		E122406820F52A78005A8B94 /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122406720F52A78005A8B94 /* HeightViewController.swift */; };
 		E123173C2101916D009CC0AB /* JsonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123173B2101916D009CC0AB /* JsonInfo.swift */; };
 		E1C5E2B02107820000FCC44A /* UserLoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5E2AF2107820000FCC44A /* UserLoc.swift */; };
 		E1CA86272106328700C5FD1B /* NyoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA86262106328700C5FD1B /* NyoService.swift */; };
 		E1CA862B21063F9800C5FD1B /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA862A21063F9800C5FD1B /* PdfViewController.swift */; };
+		E1D1DF22210C24A300656D9F /* HeightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1DF21210C24A300656D9F /* HeightTableViewController.swift */; };
+		E1D1DF24210C288A00656D9F /* PressureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D1DF23210C288A00656D9F /* PressureTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,12 +109,13 @@
 		E122405F20F519B4005A8B94 /* ProjViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjViewController.swift; sourceTree = "<group>"; };
 		E122406120F52A35005A8B94 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		E122406320F52A49005A8B94 /* PressureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressureViewController.swift; sourceTree = "<group>"; };
-		E122406520F52A63005A8B94 /* OrientationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationViewController.swift; sourceTree = "<group>"; };
 		E122406720F52A78005A8B94 /* HeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightViewController.swift; sourceTree = "<group>"; };
 		E123173B2101916D009CC0AB /* JsonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonInfo.swift; sourceTree = "<group>"; };
 		E1C5E2AF2107820000FCC44A /* UserLoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoc.swift; sourceTree = "<group>"; };
 		E1CA86262106328700C5FD1B /* NyoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyoService.swift; sourceTree = "<group>"; };
 		E1CA862A21063F9800C5FD1B /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
+		E1D1DF21210C24A300656D9F /* HeightTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightTableViewController.swift; sourceTree = "<group>"; };
+		E1D1DF23210C288A00656D9F /* PressureTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressureTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,7 +247,6 @@
 				E122406120F52A35005A8B94 /* TempViewController.swift */,
 				E122406720F52A78005A8B94 /* HeightViewController.swift */,
 				E122406320F52A49005A8B94 /* PressureViewController.swift */,
-				E122406520F52A63005A8B94 /* OrientationViewController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -281,6 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				E116A87E210BE0B8002D75B4 /* TempTableViewController.swift */,
+				E1D1DF21210C24A300656D9F /* HeightTableViewController.swift */,
+				E1D1DF23210C288A00656D9F /* PressureTableViewController.swift */,
 			);
 			path = Tables;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			files = (
 				4FE8BC1520EF134E009BA2BB /* MissionViewController.swift in Sources */,
 				4FE8BC1720EF1814009BA2BB /* SatViewController.swift in Sources */,
+				E1D1DF22210C24A300656D9F /* HeightTableViewController.swift in Sources */,
 				E122406820F52A78005A8B94 /* HeightViewController.swift in Sources */,
 				E1CA86272106328700C5FD1B /* NyoService.swift in Sources */,
 				E116A87D210BAF08002D75B4 /* InfoViewController.swift in Sources */,
@@ -516,7 +520,7 @@
 				4A2E6C4120E7FFB0001F404B /* ViewController.swift in Sources */,
 				E122406020F519B4005A8B94 /* ProjViewController.swift in Sources */,
 				4FCC3EDD21091B22004C4B61 /* SatPositions.swift in Sources */,
-				E122406620F52A63005A8B94 /* OrientationViewController.swift in Sources */,
+				E1D1DF24210C288A00656D9F /* PressureTableViewController.swift in Sources */,
 				E122406420F52A49005A8B94 /* PressureViewController.swift in Sources */,
 				E1C5E2B02107820000FCC44A /* UserLoc.swift in Sources */,
 				4A2E6C3F20E7FFB0001F404B /* AppDelegate.swift in Sources */,

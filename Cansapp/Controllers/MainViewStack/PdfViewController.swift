@@ -32,7 +32,7 @@ class PdfViewController: UIViewController {
     }
     
     func setupView() {
-        navigationItem.title = "TUTORIAL :)"
+        navigationItem.title = "Guia"
         
         //Constraints PDFView
         NSLayoutConstraint.activate([pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor), pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor), pdfView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor), pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)])
