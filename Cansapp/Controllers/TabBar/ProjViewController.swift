@@ -32,11 +32,6 @@ class ProjViewController: UITabBarController {
         altituController.tabBarItem.image = #imageLiteral(resourceName: "altit")
         altituController.tabBarItem.selectedImage = #imageLiteral(resourceName: "altit_F")
         
-//        let orienta = OrientationViewController()
-//        let orientController = UINavigationController(rootViewController: orienta)
-//        orientController.tabBarItem.image = #imageLiteral(resourceName: "orien")
-//        orientController.tabBarItem.selectedImage = #imageLiteral(resourceName: "orien_F")
-        
         viewControllers = [tempeController, pressController, altituController]
     }
     
