@@ -16,7 +16,7 @@ class MissionViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action:  #selector(misionAlert))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-
+       // tableView.rowHeight = 30
         setupView()
     }
     

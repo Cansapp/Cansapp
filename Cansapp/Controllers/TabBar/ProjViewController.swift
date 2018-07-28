@@ -42,7 +42,6 @@ class ProjViewController: UITabBarController {
     
     @objc func pdfDisplay(){
         let first = PdfViewController()
-        //
         self.navigationController?.pushViewController(first, animated: true)
     }
 }
