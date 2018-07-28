@@ -14,7 +14,7 @@ class NyoService {
     let session: URLSession;
     var urlComponents = URLComponents()
     static let shared = NyoService(session: URLSession.shared)
-
+    
     init(session: URLSession) {
         self.session = session
         urlComponents.scheme = "https"
@@ -23,7 +23,7 @@ class NyoService {
     }
     
     func all(completion: @escaping ((SatPositions) -> Void)){
-        urlComponents.path = "/rest/v1/satellite/positions/25544/41.702/-76.014/0/100/&apiKey=DJQMYV-93PEFY-ZVFLHZ-3UW0"
+        urlComponents.path = "/rest/v1/satellite/positions/25544/41.702/-76.014/0/300/&apiKey=DJQMYV-93PEFY-ZVFLHZ-3UW0"
         
         guard let url = urlComponents.url else {
             print("Url not valid")
@@ -43,7 +43,7 @@ class NyoService {
                 do {
                     let jsonResult = try JSONDecoder().decode(SatPositions.self, from: json)
                     completion(jsonResult)
-                    print(jsonResult as Any)
+                    //print(jsonResult as Any)
                 } catch(let err) {
                     print("Parsing Error: \(err)")
                 }
@@ -54,3 +54,4 @@ class NyoService {
         task.resume()
     }
 }
+
